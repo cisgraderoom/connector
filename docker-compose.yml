@@ -38,3 +38,11 @@ services:
     volumes:
         - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+      - cisgraderoom
+networks:
+  cisgraderoom:
+    external: true
+
+
+    # docker network create -d bridge cisgraderoom
