@@ -14,8 +14,8 @@ services:
       - ./init:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
-    networks:
-      - cisgraderoom
+    # networks:
+      # - cisgraderoom
   redis:
     image: redis:6.2.5-alpine
     restart: always
@@ -29,8 +29,8 @@ services:
     volumes:
       - ./data/redis:/data
       - ./config/redis.conf:/redis.conf
-    networks:
-      - cisgraderoom
+    # networks:
+      # - cisgraderoom
   rabbitmq:
     image: rabbitmq:3-management-alpine
     restart: always
@@ -44,11 +44,11 @@ services:
     volumes:
         - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
-    networks:
-      - cisgraderoom
-networks:
-  cisgraderoom:
-    external: true
+    # networks:
+      # - cisgraderoom
+# networks:
+#   cisgraderoom:
+#     external: true
 
 
     # docker network create -d bridge cisgraderoom
