@@ -42,8 +42,8 @@ services:
       - "5672:5672"
       - "15672:15672"
     volumes:
-        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
-        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+        - ~/data/rabbitmq/data:/var/lib/rabbitmq/
+        - ~/data/rabbitmq/log:/var/log/rabbitmq
     # networks:
       # - cisgraderoom
 # networks:
