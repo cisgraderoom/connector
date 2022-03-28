@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.5.5-10.5.8-MariaDB-1:10.5.8+maria~focal)
 # Database: cisgraderoom
-# Generation Time: 2022-03-28 09:38:01 +0000
+# Generation Time: 2022-03-28 10:02:53 +0000
 # ************************************************************
 
 
@@ -121,19 +121,19 @@ LOCK TABLES `migrations` WRITE;
 INSERT INTO `migrations` (`id`, `migration`, `batch`)
 VALUES
 	(10,'2022_01_06_211157_create_files_table',1),
-	(41,'2014_10_12_000000_create_users_table',2),
-	(42,'2014_10_12_100000_create_password_resets_table',2),
-	(43,'2019_08_19_000000_create_failed_jobs_table',2),
-	(44,'2019_12_14_000001_create_personal_access_tokens_table',2),
-	(45,'2021_10_12_165020_create_classrooms_table',2),
-	(46,'2021_10_13_010815_create_user_access_table',2),
-	(47,'2021_10_13_153739_create_problems_table',2),
-	(48,'2021_10_13_174326_create_posts_table',2),
-	(49,'2021_10_13_174830_create_comments_table',2),
-	(50,'2022_02_22_221543_create_submission_table',2),
-	(51,'2022_02_23_211924_create_score_table',2),
-	(52,'2022_03_22_202840_create_jobs_table',2),
-	(53,'2022_03_22_204332_create_plagiarism_table',2);
+	(54,'2014_10_12_000000_create_users_table',2),
+	(55,'2014_10_12_100000_create_password_resets_table',2),
+	(56,'2019_08_19_000000_create_failed_jobs_table',2),
+	(57,'2019_12_14_000001_create_personal_access_tokens_table',2),
+	(58,'2021_10_12_165020_create_classrooms_table',2),
+	(59,'2021_10_13_010815_create_user_access_table',2),
+	(60,'2021_10_13_153739_create_problems_table',2),
+	(61,'2021_10_13_174326_create_posts_table',2),
+	(62,'2021_10_13_174830_create_comments_table',2),
+	(63,'2022_02_22_221543_create_submission_table',2),
+	(64,'2022_02_23_211924_create_score_table',2),
+	(65,'2022_03_22_202840_create_jobs_table',2),
+	(66,'2022_03_22_204332_create_plagiarism_table',2);
 
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -226,8 +226,8 @@ CREATE TABLE `problems` (
   `problem_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `problem_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `problem_desc` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `open_at` datetime NOT NULL DEFAULT '2022-03-28 16:35:16',
-  `close_at` datetime NOT NULL DEFAULT '2022-03-28 16:35:16',
+  `open_at` datetime NOT NULL DEFAULT '2022-03-28 17:02:35',
+  `close_at` datetime NOT NULL DEFAULT '2022-03-28 17:02:35',
   `is_hidden` tinyint(1) NOT NULL DEFAULT 0,
   `is_delete` tinyint(1) NOT NULL DEFAULT 0,
   `testcase` int(11) NOT NULL,
@@ -277,7 +277,7 @@ CREATE TABLE `submission` (
   `classcode` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL,
   `problem_id` bigint(20) unsigned NOT NULL,
   `code` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `result` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `result` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `score` double(5,2) NOT NULL DEFAULT 0.00,
   `lang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -334,9 +334,9 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `status`, `name`, `created_at`, `updated_at`)
 VALUES
-	(1,'superteacher','$2y$10$BTeESeVH77zOHguZnynmMew8mF1qpSH03KcIeB9B6wFX3fU5.DhFC','superteacher',1,'SuperTeacher','2022-03-28 16:37:45','2022-03-28 16:37:45'),
-	(2,'teacher','$2y$10$zwZAZKJ74tifQazihBt3ZO3AnXyXcqAWCZ2d8ebYyC/KLQloK2TQK','teacher',1,'อาจารย์ทดสอบ','2022-03-28 16:37:45','2022-03-28 16:37:45'),
-	(3,'student01','$2y$10$a.r81OSNK7wCAtA6LhXDT.MtD1f8X7K5g4.HvYr4TkyOOI5.fG1qW','student',1,'นักเรียนทดสอบ','2022-03-28 16:37:45','2022-03-28 16:37:45');
+	(1,'superteacher','$2y$10$3vfBVPmlOxJrHYd3ZgfSMuzv4ocO7l.KUcmVlpA2rmluj7XeAruVa','superteacher',1,'SuperTeacher','2022-03-28 17:02:41','2022-03-28 17:02:41'),
+	(2,'teacher','$2y$10$Cm1Ps6Xes9T9P9yeTnVmXOiSAdHoge6u5BRS3FsGTiFcNCgIZ68NO','teacher',1,'อาจารย์ทดสอบ','2022-03-28 17:02:41','2022-03-28 17:02:41'),
+	(3,'student01','$2y$10$6lOJVF2h46OjkV7lnSa5xecK0uZX38ZHcFQftzKxhlfy6K89KnTNy','student',1,'นักเรียนทดสอบ','2022-03-28 17:02:41','2022-03-28 17:02:41');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
